@@ -39,7 +39,7 @@ def main():
     
     llm_chain = LLMChain(prompt=prompt, llm=llm)
     
-    uploaded_file = st.file_uploader("Upload `.sol` files here", type="sol")
+    uploaded_file = st.file_uploader("Upload `.sol` file here", type="sol")
     if uploaded_file is not None:
         
         stringio = StringIO(uploaded_file.getvalue().decode("utf-8"))
