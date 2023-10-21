@@ -24,8 +24,8 @@ def main():
     st.set_page_config(page_title="Solidity to Clarity", page_icon=":robot_face:")
 
     with st.sidebar:
-        st.title(":robot_face: Solidity to Clarity Converter")
-        st.write("The converter is powered by OpenAI gpt-3.5-turbo-16k LLM")
+        st.title("Solidity to Clarity Converter")
+        st.write("The converter is powered by OpenAI GPT-4")
     
         st.divider()
     
