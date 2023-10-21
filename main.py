@@ -11,6 +11,7 @@ import openai
 from langchain import PromptTemplate
 from langchain.chat_models import ChatOpenAI
 from langchain.chains import LLMChain
+from langchain.callbacks import get_openai_callback
 
 load_dotenv()
 openai.api_key = os.getenv("OPENAI_API_KEY")
@@ -43,8 +44,11 @@ def main():
         
         stringio = StringIO(uploaded_file.getvalue().decode("utf-8"))
         string_data = stringio.read()
-        query = "Convert the Solidity Code into Clarity Code" + string_data
-        st.write(llm_chain.run(query))
+        query = "Convert the Solidity Code into Clarity Code \n" + string_data
+        
+        with get_openai_callback() as cb:
+            st.code(llm_chain.run(query), language = 'clarity')
+            st.code("This message costed $" + str(cb.total_cost), 'clarity')
 
 if __name__ == "__main__":
     main()
