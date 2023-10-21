@@ -48,7 +48,7 @@ def main():
         
         with get_openai_callback() as cb:
             st.code(llm_chain.run(query), language = 'clarity')
-            st.code("This message costed $" + str(cb.total_cost), 'python')
+            st.code("This message costed $" + str(round(cb.total_cost, 4)), 'python')
 
 if __name__ == "__main__":
     main()
