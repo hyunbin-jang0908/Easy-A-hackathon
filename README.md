@@ -30,8 +30,8 @@ To explore the capability of instantly converting your smart contracts from Soli
 			prompt = PromptTemplate(template=template, input_variables=["question"])
 			llm_chain = LLMChain(prompt=prompt, llm=llm)
 			```
-	- **Description**: This configuration defines the front-end button functionality of the website. When a user uploads a file with the `.sol` extension, the system triggers an extraction process to gather all data within the file. This data is then channeled through the Large Language Model, which undertakes the task of converting the Solidity code into Clarity Code. Upon successful conversion, the system generates a new file with the `.clar` extension, which is then made available to the user for download.
-	- **Technical**: 
+   - **Description**: This configuration defines the front-end button functionality of the website. When a user uploads a file with the `.sol` extension, the system triggers an extraction process to gather all data within the file. This data is then channeled through the Large Language Model, which undertakes the task of converting the Solidity code into Clarity Code. Upon successful conversion, the system generates a new file with the `.clar` extension, which is then made available to the user for download.
+   - **Technical**: 
 		- `Main Function Implementation`
 			 ```python
 			uploaded_file = st.file_uploader("Upload `.sol` file here", type="sol")
